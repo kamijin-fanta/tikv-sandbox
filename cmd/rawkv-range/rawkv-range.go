@@ -59,6 +59,8 @@ func main() {
 	// Scan key range from TiKV
 	getLowerKey := []byte("range-test_2")
 	getUpperKey := []byte("range-test_7")
+	//getLowerKey = append(getLowerKey, 0)
+	//getUpperKey = append(getUpperKey, 0)
 	keysRes, valsRes, err := cli.Scan(ctx, getLowerKey, getUpperKey, 10)
 	if err != nil {
 		panic(err)
